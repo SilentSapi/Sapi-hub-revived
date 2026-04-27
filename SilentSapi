@@ -51,7 +51,8 @@ end
 
 local execStatus = (executor == "Xeno" or executor:lower():find("solara") or executor:lower():find("krnl")) and "Not Working" or "Working"
 
-local Window = Library.CreateLib("Sapi Hub BF PvP ˃ᴗ˂  |  " .. executor, UiSettingsModule.currentTheme)
+-- CHANGED: Updated Title to "SilentSapi"
+local Window = Library.CreateLib("SilentSapi", UiSettingsModule.currentTheme)
 
 local Tab = Window:NewTab("◇・Executor Status")
 local Section = Tab:NewSection("◈・Information")
@@ -205,7 +206,7 @@ Section:NewButton("Join Discord", "Get Link Discord server", function()
     if setclipboard then
         setclipboard(link)
         game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "Sapi Hub",
+            Title = "SilentSapi",
             Text = "Copied Discord Link!",
             Duration = 5
         })
@@ -329,7 +330,7 @@ end)
 Section:NewButton("Save Current Settings", "Save all current settings", function()
     OthersStuffsModule.SaveSettings(Settings)
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Sapi Hub",
+        Title = "SilentSapi",
         Text = "Settings Saved!",
         Duration = 4
     })
@@ -339,7 +340,7 @@ Section:NewButton("Reset Settings", "Clear saved settings", function()
     OthersStuffsModule.ResetSettings()
     Settings = {} -- also clear local
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Sapi Hub",
+        Title = "SilentSapi",
         Text = "Settings Reset!",
         Duration = 4
     })
