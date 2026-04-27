@@ -17,7 +17,7 @@ toggleGui.Name = "ToggleGui"
 toggleGui.Parent = game.CoreGui
 
 local toggleButton = Instance.new("ImageButton")
-toggleButton.Name = "SHV1"
+toggleButton.Name = "SilentSapiIcon"
 toggleButton.Size = UDim2.new(0, 40, 0, 40)
 toggleButton.Position = UDim2.new(0, 5, 0, 10)
 toggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -51,7 +51,7 @@ end
 
 local execStatus = (executor == "Xeno" or executor:lower():find("solara") or executor:lower():find("krnl")) and "Not Working" or "Working"
 
--- CHANGED: Updated Title to "SilentSapi"
+-- TITLE FIXED: Now only displays "SilentSapi"
 local Window = Library.CreateLib("SilentSapi", UiSettingsModule.currentTheme)
 
 local Tab = Window:NewTab("◇・Executor Status")
@@ -66,12 +66,12 @@ local Section = Tab:NewSection("✏・Updated")
 Section:NewLabel("• Added Info Of Target (Name/Health) ✔")
 Section:NewLabel("• Optimized Script ✔")
 Section:NewLabel("• Improved Fps Boost ✔")
-Section:NewLabel("• Fixed Soul Guitar M1in Silent aim ✔")
-Section:NewLabel("• Added RTX Graphic(Visual Vibes) ✔")
+Section:NewLabel("• Fixed Soul Guitar M1 in Silent aim ✔")
+Section:NewLabel("• Added RTX Graphic (Visual Vibes) ✔")
 Section:NewLabel("• Added Custom Global Text ✔")
 Section:NewLabel("• Added Dash No CD ✔")
 Section:NewLabel("• Added Remove Fog or Lava ✔")
-Section:NewLabel("• Added Z Skills Work(Except Godhuman Z) ✔")
+Section:NewLabel("• Added Z Skills Work (Except Godhuman Z) ✔")
 Section:NewLabel("• Added Fruit M1 Closet Attack ✔")
 Section:NewLabel("• Fixed Buddy Sword X in Silent aim ✔")
 
@@ -202,7 +202,7 @@ local Tab = Window:NewTab("✿・Features")
 local Section = Tab:NewSection("⚜・Settings")
 
 Section:NewButton("Join Discord", "Get Link Discord server", function()
-	local link = "https://discord.gg/fKwqmB4C"
+    local link = "https://discord.gg/fKwqmB4C"
     if setclipboard then
         setclipboard(link)
         game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -351,19 +351,7 @@ Section:NewButton("Rejoin Server", "Rejoin your server", function()
 end)
 
 Section:NewDropdown("・Global Text Font", "Change font for all text", {
-    "Arcade",
-    "Cartoon",
-    "SciFi",
-    "Fantasy",
-    "Antique",
-    "Garamond",
-    "RobotoMono",
-    "FredokaOne",
-    "LuckiestGuy",
-    "PermanentMarker",
-    "SpecialElite",
-    "Oswald",
-    "Nunito"
+    "Arcade", "Cartoon", "SciFi", "Fantasy", "Antique", "Garamond", "RobotoMono", "FredokaOne", "LuckiestGuy", "PermanentMarker", "SpecialElite", "Oswald", "Nunito"
 }, function(selected)
     local fontEnum = Enum.Font[selected]
     if fontEnum then
@@ -408,7 +396,7 @@ OthersStuffsModule:ApplySettings(Settings, {
     ESP = ESPModule,
     Stuffs = StuffsModule,
     Ui = UiSettingsModule,
-    Zskill= ZSkillModule
+    Zskill = ZSkillModule
 }, {
     AimlockPlayers = AimlockPlayersToggle,
     AimlockPlayersMiniTogglePlayers = AimlockPlayersMiniTogglePlayersToggle,
@@ -445,13 +433,12 @@ OthersStuffsModule.StartFruitNotifier()
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed and input.KeyCode == Enum.KeyCode.M then
         Library:ToggleUI()
-		toggleButton.Visible = not toggleButton.Visible
+        toggleButton.Visible = not toggleButton.Visible
     end
 end)
 
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed and UserInputService.KeyboardEnabled and input.KeyCode == Enum.KeyCode.G then
-
         Settings["SilentAimPlayers"] = not Settings["SilentAimPlayers"]
         SilentAimModule:SetPlayerSilentAim(Settings["SilentAimPlayers"])
         if SilentAimPlayersToggle then
